@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="aula01-01-primeiro-webapp" path="/aula01-01-primeiro-webapp" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-01-primeiro-webapp"/><Context docBase="aula01-02-servlet" path="/aula01-02-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-02-servlet"/><Context docBase="aula01-03-servlet" path="/aula01-03-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-03-servlet"/><Context docBase="aula01-04-annotation-servlet" path="/aula01-04-annotation-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-04-annotation-servlet"/></Host>
+      <Context docBase="aula01-01-primeiro-webapp" path="/aula01-01-primeiro-webapp" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-01-primeiro-webapp"/><Context docBase="aula01-02-servlet" path="/aula01-02-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-02-servlet"/><Context docBase="aula01-03-servlet" path="/aula01-03-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-03-servlet"/><Context docBase="aula01-04-annotation-servlet" path="/aula01-04-annotation-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-04-annotation-servlet"/><Context docBase="aula02-01-soma" path="/aula02-01-soma" reloadable="true" source="org.eclipse.jst.j2ee.server:aula02-01-soma"/></Host>
     </Engine>
   </Service>
 </Server>
