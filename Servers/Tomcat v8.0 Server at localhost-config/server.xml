@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="aula01-01-primeiro-webapp" path="/aula01-01-primeiro-webapp" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-01-primeiro-webapp"/><Context docBase="aula01-02-servlet" path="/aula01-02-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-02-servlet"/><Context docBase="aula01-03-servlet" path="/aula01-03-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-03-servlet"/><Context docBase="aula01-04-annotation-servlet" path="/aula01-04-annotation-servlet" reloadable="true" source="org.eclipse.jst.j2ee.server:aula01-04-annotation-servlet"/><Context docBase="aula02-01-soma" path="/aula02-01-soma" reloadable="true" source="org.eclipse.jst.j2ee.server:aula02-01-soma"/><Context docBase="aula02-02-filtro" path="/aula02-02-filtro" reloadable="true" source="org.eclipse.jst.j2ee.server:aula02-02-filtro"/><Context docBase="aula02-03-java-server-pages" path="/aula02-03-java-server-pages" reloadable="true" source="org.eclipse.jst.j2ee.server:aula02-03-java-server-pages"/></Host>
+      <Context docBase="aula02-04-hello-world1" path="/aula-03-04-hello-world" reloadable="true" source="org.eclipse.jst.j2ee.server:aula02-04-hello-world1"/></Host>
     </Engine>
   </Service>
 </Server>
