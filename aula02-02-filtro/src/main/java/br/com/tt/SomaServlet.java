@@ -30,6 +30,13 @@ public class SomaServlet extends HttpServlet{
 		int val2 = Integer.parseInt(valor2);
 		//Realizando as operações
 		int soma = val1 + val2;
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//Respondendo ao cliente
 		writer.print("A soma é " + soma);
 	}
