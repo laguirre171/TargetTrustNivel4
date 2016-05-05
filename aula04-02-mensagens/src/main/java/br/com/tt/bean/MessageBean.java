@@ -45,6 +45,14 @@ public class MessageBean {
 		
 	}
 	
+	public void all(){
+		info();
+		warn();
+		erro();
+		fatal();
+		
+	}
+	
 	
 
 }
