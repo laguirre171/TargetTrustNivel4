@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<f:loadBundle var="mgs" basename="messages"/>
+<h:head></h:head>
+<h:body>
+	<h:form>
+			<p:menu>
+			<p:submenu label="Mensagem">
+				<p:menuitem value="messagen" action="messagen" 
+					icon="ui-icon-disk" />
+				<p:menuitem value="sistema" action="sistema" 
+					icon="ui-icon-arrowrefresh-1-w" />
+				<p:menuitem value="parametro" action="parametro"
+					icon="ui-icon-arrowrefresh-1-w" />
+				<p:menuitem value="i18n" action="i18n"
+					icon="ui-icon-arrowrefresh-1-w" />
+			</p:submenu>
+
+		</p:menu>
+		<h:outputLabel value="#{mgs.titulo}"/>
+		<br />
+		<h:outputLabel value="#{mgs['titulo']}"/>
+		<br />
+		<h:outputLabel value="#{mgs['message']}"/>
+	</h:form>
+</h:body>
+</html>

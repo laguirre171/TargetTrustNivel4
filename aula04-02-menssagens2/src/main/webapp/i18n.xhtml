@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<f:loadBundle var="mgs" basename="messages" />
+		<h:outputText value="#{mgs.message}" />
+		<h:commandButton value="Français" action="#{i18n.alteraIdioma('fr')}"
+			rendered="#{i18n.idioma!='fr'}" />
+		<h:commandButton value="
+			English"
+			action="#{i18n.alteraIdioma('en')}" rendered="#{i18n.idioma!= 'en'}" />
+		<h:commandButton value="
+			Padrão"
+			action="#{i18n.alteraIdioma('en')}" rendered="#{i18n.idioma!= 'en'}" />
+
+	</h:form>
+</h:body>
+</html>
