@@ -1,11 +1,23 @@
 package br.com.tt.model;
 
+import java.util.Date;
+
 public class Proprietario {
 	private String nome;
 	private String cpf;
 	private String telefone;
 	private String email;
 	private String endereco;
+	private Date dataNascimento;
+	
+	
+	
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	public String getNome() {
 		return nome;
 	}
