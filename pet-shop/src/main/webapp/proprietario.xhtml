@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="conteudo">
+		<h:form>
+			<p:panel header="Cadastro Proprietário">
+				<p:messages globalOnly="true" showDetail="true" showSummary="false"
+					closable="true" showIcon="true" />
+				<h:panelGrid columns="3">
+					<p:outputLabel value="Nome:" for="nome" />
+					<p:inputText id="nome" value="#{proprietario.proprietario.nome}"
+						required="true" requiredMessage="Campo Obrigatório" />
+					<p:message for="nome" />
+					<p:outputLabel value="CPF: " for="cpf" />
+					
+					<p:inputMask mask="999.999.999-99" id="cpf"
+					value="#{proprietario.proprietario.cpf}"
+					required="true"
+					requiredMessage="Campo Obrigatório"
+					converterMessage="Falha ao converter CPF">
+						<f:converter converterId="cpfConverter" />
+					</p:inputMask>
+					
+				</h:panelGrid>
+				<br />
+				<br />
+				<p:commandButton value="Salvar" action="#{proprietario.salvar}"
+					update="@form" />
+				<p:commandButton value="Cancelar" action="#{proprietario.cancelar}"
+					update="@form" immediate="true" resetValues="true" />
+				<br />
+				<br />
+				<p:dataTable value="#{proprietario.proprietarios}"
+					var="proprietario"
+					rendered="#{not empty proprietario.proprietarios}">
+					<p:column headerText="Nome">
+						<h:outputText value="#{proprietario.nome}" />
+					</p:column>
+					
+					<p:column headerText="CPF">
+						<h:outputText value="#{proprietario.cpf}" >
+							<f:converter converterId="cpfConverter">
+							</f:converter>
+						</h:outputText>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>
+</html>

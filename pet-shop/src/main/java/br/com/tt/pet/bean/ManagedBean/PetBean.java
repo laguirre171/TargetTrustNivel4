@@ -10,6 +10,8 @@ import br.com.tt.pet.util.UtilMessage;
 
 @ManagedBean
 @SessionScoped
+
+
 public class PetBean {
 	
 	private Pet pet = new Pet();
