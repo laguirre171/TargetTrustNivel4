@@ -28,14 +28,13 @@
 					</p:inputMask>
 					<p:message for="cpf" />
 					
-					<p:outputLabel value="Data nasc:" 
-					for="data-nasc"/>
-					<p:inputText id="data-nasc"
-				value="#{proprietario.proprietario.dataNasc}">
-					<f:convertDateTime pattern="d-MM-yyyy" />
+					 <p:outputLabel for="data-nasc" value="Data Nasc:" />
+ 				     <p:calendar id="data-nasc" value="#{proprietario.proprietario.dataNascimento}" />
+ 
+			
+		
 					
-					</p:inputText>
-<p:message for="data-nasc"/>
+					
 
 				</h:panelGrid>
 				<br />
@@ -58,9 +57,9 @@
 						<h:outputText value="#{proprietario.cpf}">
 							<f:converter converterId="cpfConverter" />
 						</h:outputText>
-					</p:column>
+					</p:column>					
 					<p:column headerText="Data Nasc">
-						<h:outputText value="#{proprietario.dataNasc}">
+						<h:outputText value="#{proprietario.dataNascimento}">
 					<f:convertDateTime pattern="dd-MMMM-yyyy" />						</h:outputText>
 					</p:column>
 					
