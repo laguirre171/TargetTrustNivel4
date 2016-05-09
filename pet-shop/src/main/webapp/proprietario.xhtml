@@ -25,16 +25,13 @@
 						converterMessage="Falha ao converter CPF"
 						>
 						<f:converter converterId="cpfConverter" />
+						<f:validator validatorId="cpfValidator" />
 					</p:inputMask>
 					<p:message for="cpf" />
 					
 					 <p:outputLabel for="data-nasc" value="Data Nasc:" />
  				     <p:calendar id="data-nasc" value="#{proprietario.proprietario.dataNascimento}" />
- 
-			
-		
-					
-					
+ 					
 
 				</h:panelGrid>
 				<br />
