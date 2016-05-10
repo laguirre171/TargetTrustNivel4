@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.tt.model.Proprietario;
-import br.com.tt.pet.util.UtilMessage;
+import br.com.tt.pet.util.MessageUtil;
 
 @ManagedBean(name="proprietario")
 @SessionScoped
@@ -19,13 +19,13 @@ public class ProprietarioBean {
 	
 	public void salvar(){
 		System.out.println("Salvando \n\t" + proprietario.getNome() + "\n\t" + proprietario.getCpf());
-		UtilMessage.info("Salvo", proprietario.getNome() + " Salvo com sucesso");
+		MessageUtil.info("Salvo", proprietario.getNome() + " Salvo com sucesso");
 		proprietarios.add(proprietario);
 		proprietario = new Proprietario();
 	}
 	
 	public void cancelar(){
-		UtilMessage.warn("Cancelado", "Cancelado" + " Cancelado o cadastro!");
+		MessageUtil.warn("Cancelado", "Cancelado" + " Cancelado o cadastro!");
 		proprietario = new Proprietario();
 	}
 	

@@ -5,18 +5,18 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-import br.com.tt.pet.util.UtilCnpj;
+import br.com.tt.pet.util.CnpjUtil;
 
 @FacesConverter(value = "cnpjConverter")
 public class CnpjConverter implements Converter{
 
 	public Object getAsObject(FacesContext arg0, UIComponent arg1, String value) {
-		return UtilCnpj.removeMascara(value);
+		return CnpjUtil.removeMascara(value);
 	}
 
 	public String getAsString(FacesContext arg0, UIComponent arg1, Object value) {
 		// TODO Auto-generated method stub
-		return UtilCnpj.adicionarMascara((String)value);
+		return CnpjUtil.adicionarMascara((String)value);
 	}
 	
 

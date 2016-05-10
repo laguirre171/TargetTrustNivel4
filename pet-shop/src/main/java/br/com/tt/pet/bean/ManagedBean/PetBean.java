@@ -6,7 +6,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import br.com.tt.model.Pet;
-import br.com.tt.pet.util.UtilMessage;
+import br.com.tt.pet.util.MessageUtil;
 
 @ManagedBean
 @SessionScoped
@@ -33,7 +33,7 @@ public class PetBean {
 		
 		String detail = "Pet Salvo com sucesso";
 		String summary = "Pet Salvo";
-		UtilMessage.info(detail, summary);
+		MessageUtil.info(detail, summary);
 		//UtilMessage.error(detail, summary);
 		System.out.println(pets.size());
 	}

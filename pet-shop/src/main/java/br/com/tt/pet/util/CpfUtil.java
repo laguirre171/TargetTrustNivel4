@@ -1,6 +1,6 @@
 package br.com.tt.pet.util;
 
-public class UtilCpf {
+public class CpfUtil {
 	
 	/**
 	 * Valida CPF do usuário. Não aceita CPF's padrões como 11111111111 ou

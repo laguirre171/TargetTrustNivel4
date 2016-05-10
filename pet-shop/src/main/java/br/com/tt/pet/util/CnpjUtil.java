@@ -2,7 +2,7 @@ package br.com.tt.pet.util;
 
 import java.util.InputMismatchException;
 
-public class UtilCnpj {
+public class CnpjUtil {
 	
 	public static String removeMascara(String cnpj){
 		cnpj.replaceAll("\\.","");

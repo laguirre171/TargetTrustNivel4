@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.tt.model.Fornecedor;
-import br.com.tt.pet.util.UtilMessage;
+import br.com.tt.pet.util.MessageUtil;
 
 @ManagedBean(name="fornecedor")
 @SessionScoped
@@ -18,7 +18,7 @@ public class FornecedorBean {
 			new ArrayList<Fornecedor>();
 	
 	public void salvar(){
-		UtilMessage.info("", fornecedor.getNome() + " Cadastrado com sucesso!");
+		MessageUtil.info("", fornecedor.getNome() + " Cadastrado com sucesso!");
 		for (Fornecedor fornecedor : fornecedores) {
 			if (this.fornecedor.getCnpj().equals(fornecedor.getCnpj())) {
 				this.fornecedor = new Fornecedor();
@@ -31,7 +31,7 @@ public class FornecedorBean {
 	}
 	
 	public void cancelar(){
-		UtilMessage.warn("Cancelado", "Cancelado" + " Cancelado o cadastro!");
+		MessageUtil.warn("Cancelado", "Cancelado" + " Cancelado o cadastro!");
 		fornecedor = new Fornecedor();
 	}
 	
@@ -40,7 +40,7 @@ public class FornecedorBean {
 	}
 	
 	public void excluir(Fornecedor fornecedor){
-		UtilMessage.warn("", fornecedor.getNome() + " Foi Excluido!" );
+		MessageUtil.warn("", fornecedor.getNome() + " Foi Excluido!" );
 		fornecedores.remove(fornecedor);
 	}
 	

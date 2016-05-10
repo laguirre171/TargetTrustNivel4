@@ -4,7 +4,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
 
-public class UtilMessage {
+public class MessageUtil {
 	public static void info(String summary, String detail) {
 message(FacesMessage.SEVERITY_INFO, summary, detail);
 	}
