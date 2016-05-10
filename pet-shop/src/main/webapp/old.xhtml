@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="conteudo">
+		<h:form>
+			<p:panel header="Cadastro Fornecedores">
+				<p:messages globalOnly="true" showDetail="true" showSummary="false"
+					closable="true" showIcon="true" />
+				<h:panelGrid columns="3">
+
+					<p:outputLabel value="Nome:" for="nome" />
+					<p:inputText id="nome" value="#{fornecedor.fornecedor.nome}"
+						required="true" requiredMessage="Campo Obrigatório" />
+					<p:message for="nome" />
+
+					<p:outputLabel value="CNPJ:" for="cnpj" />
+					<p:inputMask mask="999.999.999.999-99" id="cnpj"
+						value="#{fornecedor.fornecedor.cnpj}" required="true"
+						requiredMessage="Campo Obrigatorio!" />
+					<p:message for="cnpj" />
+
+					<p:outputLabel value="Telefone:" for="telefone" />
+					<p:inputMask mask="(999)9999-9999" id="telefone"
+						value="#{fornecedor.fornecedor.telefone}" required="true"
+						requiredMessage="Campo Obrigatorio!" />
+					<p:message for="telefone" />
+
+					<p:outputLabel value="e-Mail:" for="email" />
+					<p:inputMask id="email" value="#{fornecedor.fornecedor.email}" />
+					<p:message for="email" />
+
+					<p:outputLabel value="Endereço:" for="endereco" />
+					<p:inputTextarea id="endereco"
+						value="#{fornecedor.fornecedor.endereco}" rows="10" cols="50"
+						queryDelay="750" minQueryLength="4" />
+					<p:message for="endereco" />
+
+
+				</h:panelGrid>
+				<br />
+				<br />
+				<p:commandButton value="Salvar" action="#{fornecedor.salvar}"
+					update="@form" />
+				<p:column headerText="Ações">
+					<h:form>
+						<p:commandButton value="Alterar"
+							action="#{fornecedorBean.alterar(fornecedor)}" update="@form"
+							immediate="true" resetValues="true" />
+					</h:form>
+					<p:commandButton value="Excluir"
+						action="#{fornecedorBean.excluir(fornecedor)}" update="@form"
+						immediate="true" resetValues="true" />
+				</p:column>
+				<p:commandButton value="Cancelar" action="#{fornecedor.cancelar}"
+					update="@form" immediate="true" resetValues="true" />
+				<br />
+				<br />
+				<p:dataTable value="#{fornecedor.fornecedores}" var="fornecedor"
+					rendered="#{not empty fornecedor.fornecedores}">
+
+					<p:column headerText="Nome">
+						<h:outputText value="#{fornecedor.nome}" />
+					</p:column>
+					<p:column headerText="CNPJ">
+						<h:outputText value="#{fornecedor.cnpj}" />
+					</p:column>
+					<p:column headerText="Telefone">
+						<h:outputText value="#{fornecedor.telefone}" />
+					</p:column>
+
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

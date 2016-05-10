@@ -13,37 +13,40 @@
 
 					<p:outputLabel value="Cnpj:" for="cnpj" />
 					<p:inputMask mask="99.999.999/9999-99"
-						value="#{fornecedorBean.fornecedor.cnpj}" id="cnpj"
-						required="true" >
-					<f:converter converterId="cnpjConverter" />
-					</p:inputMask>
-					<p:message for="cnpj"/>
-
-
-						<p:outputLabel value="Nome:" for="nome" />
-						<p:inputText value="#{fornecedorBean.fornecedor.nome}" id="nome"
-							required="true" />
-						<p:message for="nome" />
+						value="#{fornecedorBean.fornecedor.cnpj}" 
+						id="cnpj"
+						required="true"/>
+					<p:message for="cnpj" />
+					
+					<p:outputLabel value="Nome Fantasia:" for="nomeFantasia" />
+					<p:inputText 
+						value="#{fornecedorBean.fornecedor.nomeFantasia}" 
+						id="nomeFantasia"
+						required="true"/>
+					<p:message for="nomeFantasia" />
+					
+					
+					
 				</h:panelGrid>
-				<p:commandButton value="Salvar" action="#{fornecedorBean.salvar}"
+				<p:commandButton value="Salvar" action="#{fornecedorBean.salvar()}"
 					update="page-cadastro-fornecedor" />
 			</h:form>
 
 			<p:dataTable value="#{fornecedorBean.fornecedores}" var="fornecedor">
 
 				<p:column headerText="Nome Fantasia">
-					<h:outputText value="#{fornecedor.nome}" />
+					<h:outputText value="#{fornecedor.nomeFantasia}" />
 				</p:column>
 				<p:column headerText="Ações">
 					<h:form style="float:left">
-						<p:commandButton value="Alterar" style="float:left"
-							action="#{fornecedorBean.alterar(fornecedor)}"
-							update="page-cadastro-fornecedor" />
+						<p:commandButton value="Alterar"  style="float:left"
+							action="#{fornecedorBean.alterar(fornecedor)}" 
+								update="page-cadastro-fornecedor"/>
 					</h:form>
-					<h:form style="float:left">
-						<p:commandButton value="Excluir" style="float:left"
+					<h:form  style="float:left"> 
+						<p:commandButton value="Excluir"  style="float:left"
 							action="#{fornecedorBean.excluir(fornecedor)}"
-							update="page-cadastro-fornecedor" />
+								update="page-cadastro-fornecedor" />
 					</h:form>
 				</p:column>
 

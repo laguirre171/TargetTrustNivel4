@@ -18,8 +18,14 @@ public class FornecedorBean {
 			new ArrayList<Fornecedor>();
 	
 	public void salvar(){
-		System.out.println("Salvando \n\t" + fornecedor.getNome() + "\n\t" + fornecedor.getCnpj());
-		UtilMessage.info("Salvo", fornecedor.getNome() + " Salvo com sucesso");
+		UtilMessage.info("", fornecedor.getNome() + " Cadastrado com sucesso!");
+		for (Fornecedor fornecedor : fornecedores) {
+			if (this.fornecedor.getCnpj().equals(fornecedor.getCnpj())) {
+				this.fornecedor = new Fornecedor();
+				
+				return;
+			}
+		}
 		fornecedores.add(fornecedor);
 		fornecedor = new Fornecedor();
 	}
@@ -34,6 +40,7 @@ public class FornecedorBean {
 	}
 	
 	public void excluir(Fornecedor fornecedor){
+		UtilMessage.warn("", fornecedor.getNome() + " Foi Excluido!" );
 		fornecedores.remove(fornecedor);
 	}
 	
