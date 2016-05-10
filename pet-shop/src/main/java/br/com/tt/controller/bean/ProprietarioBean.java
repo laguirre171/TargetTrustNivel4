@@ -3,6 +3,7 @@ package br.com.tt.controller.bean;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -16,6 +17,9 @@ public class ProprietarioBean {
 	private Proprietario proprietario = new Proprietario();
 	private List<Proprietario> proprietarios = 
 			new ArrayList<Proprietario>();
+	
+	
+	
 	
 	public void salvar(){
 		System.out.println("Salvando \n\t" + proprietario.getNome() + "\n\t" + proprietario.getCpf());

@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 
 import br.com.tt.model.Pet;
 import br.com.tt.pet.dao.Dao;
+import br.com.tt.pet.dao.IDao;
 import br.com.tt.util.faces.MessageUtil;
 
 @ManagedBean
@@ -19,7 +20,7 @@ public class PetBean {
 	
 	private Pet pet = new Pet();
 	private List<Pet> pets;
-	private Dao<Pet> dao;
+	private IDao<Pet> dao;
 	
 	@PostConstruct
 	private void init(){
