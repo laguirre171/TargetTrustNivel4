@@ -18,12 +18,15 @@ import br.com.tt.util.faces.MessageUtil;
 public class PetBean {
 	
 	private Pet pet = new Pet();
-	private List<Pet> pets = new ArrayList<Pet>();
-	private Dao<Pet> dao = new Dao<Pet>(Pet.class);
+	private List<Pet> pets;
+	private Dao<Pet> dao;
 	
 	@PostConstruct
 	private void init(){
+		dao = new Dao<Pet>(Pet.class);
+		pets = new ArrayList<Pet>();
 		pets = dao.consultar();
+		pet = new Pet();
 	}
 	
 	public Pet getPet() {
