@@ -13,9 +13,10 @@
 
 					<p:outputLabel value="Cnpj:" for="cnpj" />
 					<p:inputMask mask="99.999.999/9999-99"
+					
 						value="#{fornecedorBean.fornecedor.cnpj}" id="cnpj"
 						required="true" >
-					<f:converter converterId="cnpjConverter" />
+					<f:converter converterId="cnpjConverter"/><!-- converterId="cnpjConverter" /> --> 
 					</p:inputMask>
 					<p:message for="cnpj"/>
 

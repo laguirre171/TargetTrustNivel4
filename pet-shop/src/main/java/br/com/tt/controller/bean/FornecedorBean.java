@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 import br.com.tt.model.Fornecedor;
 import br.com.tt.pet.util.MessageUtil;
 
-@ManagedBean(name="fornecedor")
+@ManagedBean(name="fornecedorBean")
 @SessionScoped
 public class FornecedorBean {
 	
