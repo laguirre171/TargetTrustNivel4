@@ -1,12 +1,31 @@
 package br.com.tt.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class Pet {
+	@Id
+	@SequenceGenerator(name="pet_seq", 
+						sequenceName="pet_seq")
+	@GeneratedValue(generator="pet_seq",
+	strategy = GenerationType.SEQUENCE)
+	private Long id;
 	private String nome;
 	private String cor;
 	private String raca;
 	private String especie;
 	private String sexo;
 	
+	
+	
+	public Long getId() {
+		return id;
+	}
+
 	public String getRaca() {
 		return raca;
 	}

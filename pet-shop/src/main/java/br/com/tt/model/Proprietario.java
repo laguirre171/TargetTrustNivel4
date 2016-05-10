@@ -2,7 +2,22 @@ package br.com.tt.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class Proprietario {
+	
+	@Id
+	@SequenceGenerator(name="proprietario_seq", 
+						sequenceName="proprietario_seq")
+	@GeneratedValue(generator="proprietario_seq",
+	strategy = GenerationType.SEQUENCE)
+	private Long id;
+	
 	private String nome;
 	private String cpf;
 	private String telefone;

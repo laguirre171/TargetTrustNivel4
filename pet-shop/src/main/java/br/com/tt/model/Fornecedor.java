@@ -1,11 +1,31 @@
 package br.com.tt.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class Fornecedor {
+	
+	@Id
+	@SequenceGenerator(name="fornecedor_seq", 
+						sequenceName="fornecedor_seq")
+	@GeneratedValue(generator="fornecedor_seq",
+	strategy = GenerationType.SEQUENCE)
+	private Long id;
+		
 	private String cnpj;
 	private String nome;
 	private String telefone;
 	private String email;
 	private String endereco;
+	
+	public Long getId() {
+		return id;
+	}
+	
 	public String getCnpj() {
 		return cnpj;
 	}
