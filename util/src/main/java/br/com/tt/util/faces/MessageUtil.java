@@ -1,4 +1,4 @@
-package br.com.tt.pet.util;
+package br.com.tt.util.faces;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
