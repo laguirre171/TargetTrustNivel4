@@ -27,6 +27,9 @@ public class Proprietario {
 	
 	
 	
+	public Long getId() {
+		return id;
+	}
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
