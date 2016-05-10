@@ -7,7 +7,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import br.com.tt.pet.util.CnpjUtil;
+import br.com.tt.util.CnpjUtil;
 @FacesValidator(value="cnpjValidator")
 public class CnpjValidator implements Validator {
 

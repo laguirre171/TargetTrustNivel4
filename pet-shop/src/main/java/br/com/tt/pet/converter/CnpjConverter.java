@@ -5,7 +5,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-import br.com.tt.pet.util.CnpjUtil;
+import br.com.tt.util.CnpjUtil;
 
 @FacesConverter(value = "cnpjConverter")
 public class CnpjConverter implements Converter{

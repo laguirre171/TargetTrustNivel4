@@ -5,8 +5,9 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
 import br.com.tt.model.Pet;
-import br.com.tt.pet.util.MessageUtil;
+import br.com.tt.util.faces.MessageUtil;
 
 @ManagedBean
 @SessionScoped

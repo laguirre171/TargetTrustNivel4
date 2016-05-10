@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.tt.model.Proprietario;
-import br.com.tt.pet.util.MessageUtil;
+import br.com.tt.util.faces.MessageUtil;
 
 @ManagedBean(name="proprietario")
 @SessionScoped

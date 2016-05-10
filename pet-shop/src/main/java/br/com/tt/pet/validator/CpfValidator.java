@@ -7,7 +7,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import br.com.tt.pet.util.CpfUtil;
+import br.com.tt.util.CpfUtil;
 
 @FacesValidator
 public class CpfValidator implements Validator {
