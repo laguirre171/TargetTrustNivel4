@@ -3,6 +3,7 @@ package br.com.tt.pet.bean.ManagedBean;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -20,6 +21,10 @@ public class PetBean {
 	private List<Pet> pets = new ArrayList<Pet>();
 	private Dao<Pet> dao = new Dao<Pet>(Pet.class);
 	
+	@PostConstruct
+	private void init(){
+		pets = dao.consultar();
+	}
 	
 	public Pet getPet() {
 		return pet;
@@ -32,14 +37,18 @@ public class PetBean {
 
 
 	public void salvar(){
-		pets.add(pet);
+		//pets.add(pet);
+		dao.salvar(pet);
 		pet = new Pet();
-		
+		MessageUtil.info("Pet Salvo", "Pet salvo com sucesso");
+		pets = dao.consultar();
+		/*
 		String detail = "Pet Salvo com sucesso";
 		String summary = "Pet Salvo";
 		MessageUtil.info(detail, summary);
 		//UtilMessage.error(detail, summary);
-		System.out.println(pets.size());
+		 
+		System.out.println(pets.size());*/
 	}
 
 

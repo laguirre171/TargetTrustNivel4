@@ -13,7 +13,8 @@ public class Proprietario {
 	
 	@Id
 	@SequenceGenerator(name="proprietario_seq", 
-						sequenceName="proprietario_seq")
+						sequenceName="proprietario_seq",
+						allocationSize =1)
 	@GeneratedValue(generator="proprietario_seq",
 	strategy = GenerationType.SEQUENCE)
 	private Long id;

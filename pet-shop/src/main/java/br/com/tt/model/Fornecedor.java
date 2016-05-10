@@ -11,7 +11,8 @@ public class Fornecedor {
 	
 	@Id
 	@SequenceGenerator(name="fornecedor_seq", 
-						sequenceName="fornecedor_seq")
+						sequenceName="fornecedor_seq",
+						allocationSize =1)
 	@GeneratedValue(generator="fornecedor_seq",
 	strategy = GenerationType.SEQUENCE)
 	private Long id;

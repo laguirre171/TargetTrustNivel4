@@ -10,7 +10,8 @@ import javax.persistence.SequenceGenerator;
 public class Pet {
 	@Id
 	@SequenceGenerator(name="pet_seq", 
-						sequenceName="pet_seq")
+						sequenceName="pet_seq", 
+						allocationSize =1)
 	@GeneratedValue(generator="pet_seq",
 	strategy = GenerationType.SEQUENCE)
 	private Long id;
@@ -19,9 +20,7 @@ public class Pet {
 	private String raca;
 	private String especie;
 	private String sexo;
-	
-	
-	
+		
 	public Long getId() {
 		return id;
 	}
