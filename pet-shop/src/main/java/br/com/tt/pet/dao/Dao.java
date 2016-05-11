@@ -42,8 +42,7 @@ public class Dao<T> implements IDao<T>{
 	}*/
 
 	public T buscar(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(type, id);	
 	}
 
 	public List<T> consultar() {
@@ -53,8 +52,9 @@ public class Dao<T> implements IDao<T>{
 	}
 
 	public void excluir(Long id) {
-		// TODO Auto-generated method stub
-		
+		em.getTransaction().begin();
+		em.remove(buscar(id));
+		em.getTransaction().commit();
 	}
 	
 

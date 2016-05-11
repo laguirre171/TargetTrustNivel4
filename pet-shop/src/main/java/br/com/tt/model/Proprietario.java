@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Proprietario {
@@ -24,6 +26,8 @@ public class Proprietario {
 	private String telefone;
 	private String email;
 	private String endereco;
+	
+	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
 	
 	

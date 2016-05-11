@@ -7,25 +7,42 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import br.com.tt.model.Fornecedor;
 import br.com.tt.model.Proprietario;
+import br.com.tt.pet.dao.Dao;
+import br.com.tt.pet.dao.IDao;
 import br.com.tt.util.faces.MessageUtil;
 
 @ManagedBean(name="proprietario")
 @SessionScoped
 public class ProprietarioBean {
 	
-	private Proprietario proprietario = new Proprietario();
-	private List<Proprietario> proprietarios = 
-			new ArrayList<Proprietario>();
+	private Proprietario proprietario;
+	private List<Proprietario> proprietarios;
+	private IDao<Proprietario> dao;
 	
-	
+	@PostConstruct
+	private void init(){
+		dao = new Dao<Proprietario>(Proprietario.class);
+		proprietario = new Proprietario();
+		proprietarios = new ArrayList<Proprietario>();
+		proprietarios = dao.consultar();
+		
+	}
 	
 	
 	public void salvar(){
+		dao.salvar(proprietario);
+		proprietarios = dao.consultar();		
+		MessageUtil.info("Proprietario Salvo", "Proprietario salvo com sucesso");
+		proprietario = new Proprietario();
+		
+		/*
 		System.out.println("Salvando \n\t" + proprietario.getNome() + "\n\t" + proprietario.getCpf());
 		MessageUtil.info("Salvo", proprietario.getNome() + " Salvo com sucesso");
 		proprietarios.add(proprietario);
 		proprietario = new Proprietario();
+		*/
 	}
 	
 	public void cancelar(){

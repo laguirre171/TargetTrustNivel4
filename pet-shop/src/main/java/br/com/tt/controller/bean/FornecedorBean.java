@@ -60,8 +60,11 @@ public class FornecedorBean {
 	}
 	
 	public void excluir(Fornecedor fornecedor){
-		MessageUtil.warn("", fornecedor.getNome() + " Foi Excluido!" );
-		fornecedores.remove(fornecedor);
+		MessageUtil.warn("", fornecedor.getNome() + " Foi Excluido!" );		
+		//fornecedores.remove(fornecedor);*/
+		dao.excluir(fornecedor.getId());
+		fornecedores = dao.consultar();
+		
 	}
 	
 	
